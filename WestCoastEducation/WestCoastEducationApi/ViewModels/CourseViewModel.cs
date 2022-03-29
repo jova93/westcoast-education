@@ -1,12 +1,9 @@
 ﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 
-namespace WestCoastEducationApi.Models;
+namespace WestCoastEducationApi.ViewModels;
 
-public class Course
+public class CourseViewModel
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
     public string Number { get; set; } = null!;
     public string Title { get; set; } = null!;

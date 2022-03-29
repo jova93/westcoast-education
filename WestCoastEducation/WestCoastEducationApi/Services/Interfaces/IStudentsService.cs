@@ -1,8 +1,8 @@
 ﻿using WestCoastEducationApi.Models;
 
-namespace WestCoastEducationApi.Repositories.Interfaces;
+namespace WestCoastEducationApi.Services.Interfaces;
 
-public interface IStudentsRepository
+public interface IStudentsService
 {
     Task CreateAsync(Student newStudent);
     Task<List<Student>> GetAsync();

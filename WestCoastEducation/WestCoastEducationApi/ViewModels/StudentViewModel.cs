@@ -1,12 +1,9 @@
 ﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 
-namespace WestCoastEducationApi.Models;
+namespace WestCoastEducationApi.ViewModels;
 
-public class Student
+public class StudentViewModel
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
@@ -20,5 +17,3 @@ public class Student
     // This is the courses that a student has bought.
     public ICollection<ObjectId>? PurchasedCourses { get; set; }
 }
-
-
