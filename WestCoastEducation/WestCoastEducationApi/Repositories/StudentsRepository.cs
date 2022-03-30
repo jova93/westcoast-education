@@ -5,6 +5,9 @@ using MongoDB.Driver;
 
 namespace WestCoastEducationApi.Repositories;
 
+/// <summary>
+/// This class runs CRUD operations against the local MongoDB.
+/// </summary>
 public class StudentsRepository : IStudentsRepository
 {
     // This is the Students collection in the database.

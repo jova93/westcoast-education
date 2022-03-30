@@ -2,6 +2,7 @@
 
 namespace WestCoastEducationApi.ViewModels;
 
+// Are view models necessary in the REST API?
 public class CourseViewModel
 {
     public string? Id { get; set; }
