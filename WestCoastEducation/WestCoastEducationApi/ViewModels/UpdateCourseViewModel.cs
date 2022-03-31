@@ -4,7 +4,6 @@ namespace WestCoastEducationApi.ViewModels;
 
 public class UpdateCourseViewModel
 {
-    public string? Id { get; set; }
     public string Number { get; set; } = null!;
     public string Title { get; set; } = null!;
     public string Description { get; set; } = null!;

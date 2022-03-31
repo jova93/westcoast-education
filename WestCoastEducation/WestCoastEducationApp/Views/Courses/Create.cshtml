@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Register a course";
+}
+
+@model WestCoastEducationApp.ViewModels.RegisterCourseViewModel;
+
+<h1>Register for your course now!</h1>
+
+@Html.ValidationSummary()
+
+<form asp-controller="Courses" asp-action="Create" method="POST">
+    <div class="card">
+        <div class="card-header">
+            <h4>Register for new classes</h4>
+        </div>
+        <div class="card-body p-3">
+            <div class="mb-3">
+                <label class="form-label" asp-for="Number"></label>
+                <input class="form-control" asp-for="Number" />
+                <span asp-validation-for="Number"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Title"></label>
+                <input class=form-control asp-for="Title" />
+                <span asp-validation-for="Title"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Description"></label>
+                <input class=form-control asp-for="Description" />
+                <span asp-validation-for="Description"></span>
+            </div>
+             <div class="mb-3">
+                <label class="form-label" asp-for="Duration"></label>
+                <input class=form-control asp-for="Duration" />
+                <span asp-validation-for="Duration"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Level"></label>
+                <input class=form-control asp-for="Level" />
+                <span asp-validation-for="Level"></span>
+            </div>
+             <div class="mb-3">
+                <label class="form-label" asp-for="Price"></label>
+                <input class=form-control asp-for="Price" />
+                <span asp-validation-for="Price"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="IsActive"></label>
+                <input class=form-control asp-for="IsActive" />
+                <span asp-validation-for="IsActive"></span>
+            </div>
+            <button id="save" type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </div>
+</form>
+
+<script> 
+    @* $(() => {
+        $('#Length').datepicker();
+        $('save').click((e) => {
+        e.preventDefault();
+        console.log('Click successful!');
+        let courseNumberField = $('#courseNo').val();
+        console.log(regNumberField);
+        $('#Title').css('background-color', 'red');
+        $('#Description').addClass('dummyError');
+        });
+        
+        }); *@
+</script>

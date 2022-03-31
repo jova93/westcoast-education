@@ -98,6 +98,38 @@ public class CoursesController : ControllerBase
         }
     }
 
+    [HttpGet("find/{number}")]
+    public async Task<IActionResult> Get(string number, bool unused = false)
+    {
+        try
+        {
+            var course = await _coursesService.GetByNumberAsync(number);
+
+            if (course is null)
+            {
+                return NotFound();
+            }
+
+            var model = new CourseViewModel
+            {
+                Id = course.Id,
+                Number = course.Number,
+                Title = course.Title,
+                Description = course.Description,
+                Duration = course.Duration,
+                Level = course.Level,
+                IsActive = course.IsActive,
+                Price = course.Price,
+                Participants = course.Participants
+            };
+
+            return Ok(model);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
 
     //[HttpPost]
     //public async Task<IActionResult> Post(Course newCourse)

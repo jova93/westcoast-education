@@ -96,6 +96,38 @@ public class StudentsController : ControllerBase
         }
     }
 
+    [HttpGet("find/{email}")]
+    public async Task<IActionResult> Get(string email, bool unused = false)
+    {
+        try
+        {
+            var student = await _studentsService.GetByEmailAsync(email);
+
+            if (student is null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new StudentViewModel
+            {
+                Id = student.Id,
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                Email = student.Email,
+                PhoneNumber = student.PhoneNumber,
+                Address = student.Address,
+                TotalSpent = student.TotalSpent,
+                PurchasedCourses = student.PurchasedCourses
+            };
+
+            return Ok(viewModel);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
     //[HttpPost]
     //public async Task<IActionResult> Post(Student newStudent)
     //{
